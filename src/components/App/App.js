@@ -20,7 +20,11 @@ const Main = styled.main`
   padding: 64px 32px;
 
   @media (${p => p.theme.queries.tabletAndSmaller}) {
-    
+    padding: 38px 32px;
+  };
+
+  @media (${p => p.theme.queries.phoneAndSmaller}) {
+    padding: 38px 16px;
   };
 `;
 

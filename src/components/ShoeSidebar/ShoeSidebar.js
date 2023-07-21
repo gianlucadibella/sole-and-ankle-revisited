@@ -23,18 +23,24 @@ const Sidebar = () => {
   );
 };
 
-const Wrapper = styled.aside``;
+const Wrapper = styled.aside`
+
+@media screen and (${p => p.theme.queries.tabletAndSmaller}) {
+  display: none;
+}
+
+`;
 
 const Link = styled.a`
   display: block;
   text-decoration: none;
   font-weight: ${WEIGHTS.medium};
-  color: ${COLORS.gray[900]};
+  color: var(--gray-900);
   line-height: 2;
 `;
 
 const ActiveLink = styled(Link)`
-  color: ${COLORS.primary};
+  color: var(--primary);
 `;
 
 export default Sidebar;
