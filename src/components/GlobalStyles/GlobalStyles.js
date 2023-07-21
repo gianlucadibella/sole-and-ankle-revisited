@@ -45,7 +45,6 @@ table {
 	border-spacing: 0;
 }
 
-
 /* GLOBAL STYLES */
 *,
 *:before,

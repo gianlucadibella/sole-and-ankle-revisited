@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components/macro';
-
-import { COLORS, WEIGHTS } from '../../constants';
-import Logo from '../Logo';
-import SuperHeader from '../SuperHeader';
-import MobileMenu from '../MobileMenu';
+import React from "react";
+import styled from "styled-components/macro";
+import { COLORS, WEIGHTS } from "../../constants";
+import Logo from "../Logo";
+import SuperHeader from "../SuperHeader";
+import MobileMenu from "../MobileMenu";
+import { QUERIES } from "../../constants";
 
 const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -15,28 +15,28 @@ const Header = () => {
   // <button onClick={() => setShowMobileMenu(true)}>
 
   return (
-    <header>
-      <SuperHeader />
-      <MainHeader>
-        <Side>
-          <Logo />
-        </Side>
-        <Nav>
-          <NavLink href="/sale">Sale</NavLink>
-          <NavLink href="/new">New&nbsp;Releases</NavLink>
-          <NavLink href="/men">Men</NavLink>
-          <NavLink href="/women">Women</NavLink>
-          <NavLink href="/kids">Kids</NavLink>
-          <NavLink href="/collections">Collections</NavLink>
-        </Nav>
-        <Side />
-      </MainHeader>
+      <header>
+        <SuperHeader />
+        <MainHeader>
+          <Side>
+            <Logo />
+          </Side>
+          <Nav>
+            <NavLink href="/sale">Sale</NavLink>
+            <NavLink href="/new">New&nbsp;Releases</NavLink>
+            <NavLink href="/men">Men</NavLink>
+            <NavLink href="/women">Women</NavLink>
+            <NavLink href="/kids">Kids</NavLink>
+            <NavLink href="/collections">Collections</NavLink>
+          </Nav>
+          <Side />
+        </MainHeader>
 
-      <MobileMenu
-        isOpen={showMobileMenu}
-        onDismiss={() => setShowMobileMenu(false)}
-      />
-    </header>
+        <MobileMenu
+          isOpen={showMobileMenu}
+          onDismiss={() => setShowMobileMenu(false)}
+        />
+      </header>
   );
 };
 
@@ -68,6 +68,10 @@ const NavLink = styled.a`
   &:first-of-type {
     color: ${COLORS.secondary};
   }
+
+  @media screen and (${QUERIES.laptopAndSmaller}) {
+    display: none;
+  };
 `;
 
 export default Header;
